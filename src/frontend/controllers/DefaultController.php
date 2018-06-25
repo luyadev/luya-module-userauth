@@ -14,6 +14,11 @@ use luya\userauth\models\UserLoginForm;
  */
 class DefaultController extends Controller
 {
+    /**
+     * Render the login form model.
+     * 
+     * @return \yii\web\Response|string
+     */
     public function actionIndex()
     {
         $model = new UserLoginForm();

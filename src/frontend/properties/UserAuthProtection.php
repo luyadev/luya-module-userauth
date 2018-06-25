@@ -60,6 +60,6 @@ class UserAuthProtection extends CheckboxProperty
      */
     public function label()
     {
-        return 'Seite schützen';
+        return Module::t('userauth.propertie.userauthprotection.label');
     }
 }

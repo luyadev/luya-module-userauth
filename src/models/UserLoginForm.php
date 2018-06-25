@@ -3,6 +3,7 @@
 namespace luya\userauth\models;
 
 use yii\base\Model;
+use luya\userauth\frontend\Module;
 
 /**
  * User Login Form.
@@ -52,11 +53,11 @@ class UserLoginForm extends Model
     public function validateUser()
     {
         if (!$this->user) {
-            return $this->addError('username', 'Unable to find user.');
+            return $this->addError('username', Module::t('userauth.models.userloginform.error.username'));
         }
         
         if (!$this->user->validateInputPassword($this->password)) {
-            return $this->addError('password', 'The provided password is wrong.');
+            return $this->addError('password', Module::t('userauth.models.userloginform.error.password'));
         }
     }
     

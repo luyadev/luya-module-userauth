@@ -7,6 +7,7 @@ use luya\admin\ngrest\base\NgRestModel;
 use yii\web\IdentityInterface;
 use luya\admin\aws\ChangePasswordActiveWindow;
 use luya\admin\aws\ChangePasswordInterface;
+use luya\userauth\frontend\Module;
 
 /**
  * User.
@@ -57,10 +58,9 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'username' => Yii::t('app', 'Username'),
-            'password' => Yii::t('app', 'Password'),
-            'password_salt' => Yii::t('app', 'Password Salt'),
+            'username' => Module::t('userauth.models.user.username'),
+            'password' => Module::t('userauth.models.user.password'),
+            'password_salt' => Module::t('userauth.models.user.password_salt'),
         ];
     }
 

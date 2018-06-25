@@ -10,26 +10,21 @@ Authsystem with username and password for a given cms page area. **It does not c
 
 ## Installation
 
-Install the extension through composer:
-
+1. Install the extension through composer:
 ```sh
 composer require luyadev/luya-module-userauth:dev-master
 ```
-
-Add to the config
-
+2. Add to the config
 ```php
 'modules' => [
     'userauthfrontend' => [
         'class' => 'luya\userauth\frontend\Module',
-        'useAppViewPath' => true, // When enabled the views will be looked up in the @app/views folder, otherwise the views shipped with the module will be used.
+        'useAppViewPath' => false, // When enabled the views will be looked up in the @app/views folder, otherwise the views shipped with the module will be used.
     ],
     'userauthadmin' => 'luya\userauth\admin\Module',
 ],
 ```
-
-And the user component
-
+3. And the user component
 ```php
 'components' => [
     'user' => [
@@ -37,7 +32,5 @@ And the user component
     ]
 ],
 ```
-
-Add the configuration entry `userauth_redirect_nav_id` with the value of the page id you would like to redirect when a user is not logged in, this is also the page where you should include the frontend module as it will render the login form.
-
-## Usage
+4. Place the `userauthfrontend` module on a given page in the cms.
+5. Add the config variable identifier `userauth_redirect_nav_id` with the value of the page you have included the `userauthfrontend` in step 4.

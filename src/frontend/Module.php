@@ -13,4 +13,22 @@ namespace luya\userauth\frontend;
 class Module extends \luya\base\Module
 {
     const USERAUTH_CONFIG_REDIRECT_NAV_ID = 'userauth_redirect_nav_id';
+
+    /**
+     * @inheritdoc
+     */
+    public static function onLoad()
+    {
+        self::registerTranslation('userauth', static::staticBasePath() . '/messages', [
+            'userauth' => 'userauth.php',
+        ]);
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public static function t($message, array $params = [])
+    {
+        return parent::baseT('userauth', $message, $params);
+    }
 }
