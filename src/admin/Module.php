@@ -2,8 +2,6 @@
 
 namespace luya\userauth\admin;
 
-use luya\userauth\frontend\Module as FrontendModule;
-
 /**
  * Userauth Admin Module.
  *
@@ -21,8 +19,26 @@ class Module extends \luya\admin\base\Module
     public function getMenu()
     {
         return (new \luya\admin\components\AdminMenuBuilder($this))
-            ->node(FrontendModule::t('userauth.admin.menu.node'), 'verified_user')
-                ->group(FrontendModule::t('userauth.admin.menu.group'))
-                    ->itemApi(FrontendModule::t('userauth.admin.menu.item.user'), 'userauthadmin/user/index', 'verified_user', 'api-userauth-user');
+            ->node('userauthadmin.admin.menu.node', 'verified_user')
+                ->group('userauthadmin.admin.menu.group')
+                    ->itemApi('userauthadmin.admin.menu.item.user', 'userauthadmin/user/index', 'verified_user', 'api-userauth-user');
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public static function onLoad()
+    {
+        self::registerTranslation('userauthadmin', static::staticBasePath() . '/messages', [
+            'userauthadmin' => 'userauthadmin.php',
+        ]);
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public static function t($message, array $params = [])
+    {
+        return parent::baseT('userauthadmin', $message, $params);
     }
 }
