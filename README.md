@@ -28,9 +28,15 @@ composer require luyadev/luya-module-userauth:dev-master
 ```php
 'components' => [
     'user' => [
+        'class' => 'yii\web\User',
         'identityClass' => 'luya\userauth\models\User',
     ]
 ],
 ```
-4. Place the `userauthfrontend` module on a given page in the cms.
-5. Add the config variable identifier `userauth_redirect_nav_id` with the value of the page you have included the `userauthfrontend` in step 4.
+4. Run the `./luya migrate` and `./luya import` command.
+5. Place the `userauthfrontend` module on a given page in the cms.
+6. Add the config variable identifier `userauth_redirect_nav_id` with the value of the page you have included the `userauthfrontend` in step **5**.
+
+## Usage
+
+After the installation you can secure a given page with the user login with the page propertie. Keep in mind the propertie value will not be passed to its children!
