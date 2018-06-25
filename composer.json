@@ -1,7 +1,7 @@
 {
 	"name" : "luyadev/luya-module-userauth",
 	"description" : "Authsystem with username and password for a given cms page area.",
-	"type" : "luya-extension",
+	"type" : "luya-module",
 	"keywords" : ["luya", "auth"],
 	"license": "MIT",
 	"authors" : [
