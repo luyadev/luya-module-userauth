@@ -12,5 +12,5 @@ namespace luya\userauth\frontend;
  */
 class Module extends \luya\base\Module
 {
-
+    const USERAUTH_CONFIG_REDIRECT_NAV_ID = 'userauth_redirect_nav_id';
 }
