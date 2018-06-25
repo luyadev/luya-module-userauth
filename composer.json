@@ -1,0 +1,26 @@
+{
+	"name" : "luyadev/luya-module-userauth",
+	"description" : "Authsystem with username and password for a given cms page area.",
+	"type" : "luya-extension",
+	"keywords" : ["luya", "auth"],
+	"license": "MIT",
+	"authors" : [
+		{
+			"name": "Basil Suter",
+			"email": "basil@nadar.io"
+		}
+	],
+	"require-dev" : {
+	    "luyadev/luya-testsuite" : "~1.0.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"luyadev\\userauth\\" : "src/"
+		}
+	},
+	"autoload-dev" : {
+       "psr-4" : {
+           "luyadev\\userauth\\tests\\" : "tests/"
+       }
+    }
+}
