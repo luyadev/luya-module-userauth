@@ -34,6 +34,17 @@ class UserLoginForm extends Model
 
         $this->on(self::EVENT_AFTER_VALIDATE, [$this, 'validateUser']);
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => Module::t('userauth.models.user.username'),
+            'password' => Module::t('userauth.models.user.password'),
+        ];
+    }
     
     /**
      * @inheritdoc
