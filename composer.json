@@ -15,12 +15,12 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"luyadev\\userauth\\" : "src/"
+			"luya\\userauth\\" : "src/"
 		}
 	},
 	"autoload-dev" : {
        "psr-4" : {
-           "luyadev\\userauth\\tests\\" : "tests/"
+           "luya\\userauth\\tests\\" : "tests/"
        }
     }
 }
