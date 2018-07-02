@@ -6,6 +6,5 @@ return [
     'userauth.models.user.password' => 'Password',
     'userauth.models.user.password_salt' => 'Password salt',
     'userauth.controller.default.index.loginlabel' => 'Login',
-    'userauth.models.userloginform.error.username' => 'Incorrect username and/or password',
-    'userauth.models.userloginform.error.password' => 'Incorrect password and/or username',
+    'userauth.models.userloginform.error.username_password' => 'Incorrect username and/or password',
 ];

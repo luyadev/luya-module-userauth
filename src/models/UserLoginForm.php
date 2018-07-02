@@ -63,12 +63,8 @@ class UserLoginForm extends Model
      */
     public function validateUser()
     {
-        if (!$this->user) {
-            return $this->addError('username', Module::t('userauth.models.userloginform.error.username'));
-        }
-        
-        if (!$this->user->validateInputPassword($this->password)) {
-            return $this->addError('password', Module::t('userauth.models.userloginform.error.password'));
+        if (!$this->user || !$this->user->validateInputPassword($this->password)) {
+            return $this->addError('password', Module::t('userauth.models.userloginform.error.username_password'));
         }
     }
     
