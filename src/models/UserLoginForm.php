@@ -7,9 +7,9 @@ use luya\userauth\frontend\Module;
 
 /**
  * User Login Form.
- * 
+ *
  * @property \luya\userauth\models\User $user
- * 
+ *
  * @author Basil Suter <basil@nadar.io>
  * @since 1.0.0
  */
@@ -58,7 +58,7 @@ class UserLoginForm extends Model
 
     /**
      * Validate the current input data against an user.
-     * 
+     *
      * @return boolean
      */
     public function validateUser()
@@ -72,7 +72,7 @@ class UserLoginForm extends Model
     
     /**
      * Get user object, contains false if not found.
-     * 
+     *
      * @return \luya\userauth\models\User|boolean
      */
     public function getUser()

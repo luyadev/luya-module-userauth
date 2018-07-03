@@ -11,7 +11,7 @@ use luya\userauth\frontend\Module;
 
 /**
  * User Auth Protection property.
- * 
+ *
  * @author Basil Suter <basil@nadar.io>
  * @since 1.0.0
  */
@@ -22,28 +22,25 @@ class UserAuthProtection extends CheckboxProperty
      */
     public function init()
     {
-        parent::init();    
+        parent::init();
         
         $this->on(self::EVENT_BEFORE_RENDER, [$this, 'ensureUserAccess']);
     }
     
     /**
      * Check whether the current page requires protection and user is logged in.
-     * 
+     *
      * @param BeforeRenderEvent $event
      */
     public function ensureUserAccess(BeforeRenderEvent $event)
     {
         if ($this->getValue() == 1 && Yii::$app->user->isGuest) {
 
-            // set return url
-            Yii::$app->user->returnUrl = $event->menu->absoluteLink;
-            
             // find the nav item to redirect from config
             $navItem = Yii::$app->menu->find()->where([QueryOperatorFieldInterface::FIELD_NAVID => Config::get(Module::USERAUTH_CONFIG_REDIRECT_NAV_ID)])->with(['hidden'])->one();
             
             // redirect to the given nav item
-            return Yii::$app->response->redirect($navItem->absoluteLink);
+            return Yii::$app->response->redirect($navItem->absoluteLink . '?redir=' . urlencode($event->menu->absoluteLink));
         }
     }
     

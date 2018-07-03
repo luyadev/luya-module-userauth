@@ -4,8 +4,8 @@ namespace luya\userauth\admin\controllers;
 
 /**
  * User Controller.
- * 
- * File has been created with `crud/create` command. 
+ *
+ * File has been created with `crud/create` command.
  */
 class UserController extends \luya\admin\ngrest\base\Controller
 {

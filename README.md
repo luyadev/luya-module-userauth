@@ -36,6 +36,7 @@ composer require luyadev/luya-module-userauth:dev-master
 4. Run the `./luya migrate` and `./luya import` command.
 5. Place the `userauthfrontend` module on a given page in the cms.
 6. Add the config variable identifier `userauth_redirect_nav_id` with the value of the page you have included the `userauthfrontend` in step **5**.
+7. Optional you can configure with the variable identifer `userauth_afterlogin_nav_id` on which nav id the user should be redirect when no ref url is provided.
 
 ## Usage
 

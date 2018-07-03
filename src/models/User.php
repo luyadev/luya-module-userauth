@@ -11,8 +11,8 @@ use luya\userauth\frontend\Module;
 
 /**
  * User.
- * 
- * File has been created with `crud/create` command. 
+ *
+ * File has been created with `crud/create` command.
  *
  * @property integer $id
  * @property string $username
@@ -44,7 +44,7 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
     {
         parent::init();
         
-        $this->on(self::EVENT_BEFORE_VALIDATE, function() {
+        $this->on(self::EVENT_BEFORE_VALIDATE, function () {
             if ($this->isNewRecord) {
                 $this->password_salt = Yii::$app->security->generateRandomString();
                 $this->password = Yii::$app->security->generatePasswordHash($this->password . $this->password_salt);
@@ -114,7 +114,7 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
     
     /**
      * Validate the input user password.
-     * 
+     *
      * @param string $password
      * @return boolean
      */
