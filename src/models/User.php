@@ -98,7 +98,7 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
             ['list', ['username']],
             [['create'], ['username', 'password']],
             [['update'], ['username']],
-            ['delete', false],
+            ['delete', true],
         ];
     }
     
