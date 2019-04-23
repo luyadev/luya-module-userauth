@@ -12,7 +12,7 @@ Authsystem with username and password for a given cms page area. **It does not c
 
 1. Install the extension through composer:
 ```sh
-composer require luyadev/luya-module-userauth:~1.0.0
+composer require luyadev/luya-module-userauth
 ```
 2. Add to the config
 ```php
