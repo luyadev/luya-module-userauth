@@ -40,4 +40,4 @@ composer require luyadev/luya-module-userauth
 
 ## Usage
 
-After the installation you can secure a given page with the user login with the page propertie. Keep in mind the propertie value will not be passed to its children!
+After the installation, you can secure any given page with the user login by checking the **Protect Page** checkbox in the page's **Page properties** panel. Important: this setting will not be inherited by subpages, it has to be set for every page that has to be secured.
