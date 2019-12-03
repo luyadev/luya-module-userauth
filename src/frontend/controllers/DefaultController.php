@@ -9,6 +9,7 @@ use luya\admin\models\Config;
 use luya\userauth\frontend\Module;
 use luya\helpers\Url;
 use luya\cms\menu\QueryOperatorFieldInterface;
+use yii\filters\HttpCache;
 
 /**
  * User Login.
@@ -18,6 +19,22 @@ use luya\cms\menu\QueryOperatorFieldInterface;
  */
 class DefaultController extends Controller
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'httpCache' => [
+                'class' => HttpCache::class,
+                'cacheControlHeader' => 'no-store, no-cache',
+                'lastModified' => function ($action, $params) {
+                    return time();
+                },
+            ],
+        ];
+    }
+    
     /**
      * Render the login form model.
      *

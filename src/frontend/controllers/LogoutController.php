@@ -4,6 +4,7 @@ namespace luya\userauth\frontend\controllers;
 
 use Yii;
 use luya\web\Controller;
+use yii\filters\HttpCache;
 
 /**
  * Logout Controller.
@@ -13,6 +14,22 @@ use luya\web\Controller;
  */
 class LogoutController extends Controller
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'httpCache' => [
+                'class' => HttpCache::class,
+                'cacheControlHeader' => 'no-store, no-cache',
+                'lastModified' => function ($action, $params) {
+                    return time();
+                },
+            ],
+        ];
+    }
+
     /**
      * Ensure logout and redirect to home page.
      *
