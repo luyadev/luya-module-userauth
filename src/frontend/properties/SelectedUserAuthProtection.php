@@ -103,4 +103,16 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
 
         return true;
     }
+
+    /**
+     * Whether the given should be hidden or not.
+     *
+     * @param Item $item
+     * @return boolean Returns true if hidden
+     * @see {{SelectedUserAuthProtection::isVisible()}}
+     */
+    public static function isHidden(Item $item)
+    {
+        return !self::isVisible($item);
+    }
 }
