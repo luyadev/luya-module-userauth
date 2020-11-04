@@ -35,7 +35,7 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
     public function ensureUserSelection(BeforeRenderEvent $event)
     {
         // when users are selected and the user is logged in, check for whether the user id is in the array or not.
-        if (!empty($this->getValue()) && !Yii::$app->user->isGuest && !$this->userInList(Yii::$app->user->id)) {
+        if ($this->isActivated() && !$this->userInList(Yii::$app->user->id)) {
             throw new ForbiddenHttpException("Not permitted to view this page.");
         }
     }
@@ -49,6 +49,16 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
     public function userInList($userId)
     {
         return in_array($userId, ArrayHelper::getColumn($this->getValue(), 'value'));
+    }
+
+    /**
+     * Property activated status
+     *
+     * @return boolean Returns true if the property is active, which means there are values and a user is logged in.
+     */
+    public function isActivated()
+    {
+        return !empty($this->getValue()) && !Yii::$app->user->isGuest;
     }
 
     /**
