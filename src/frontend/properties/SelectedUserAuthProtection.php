@@ -95,7 +95,7 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
     public static function isVisible(Item $item)
     {
         /** @var SelectedUserAuthProtection $prop */
-        if ($prop = $item->getProperty(SelectedUserAuthProtection::identifier())) {
+        if ($prop = $item->getProperty(self::dentifier())) {
             if ($prop->isActive()) {
                 return $prop->userInList(Yii::$app->user->id);
             }
