@@ -7,4 +7,7 @@ return [
     'userauth.models.user.password_salt' => 'Password salt',
     'userauth.controller.default.index.loginlabel' => 'Login',
     'userauth.models.userloginform.error.username_password' => 'Incorrect username and/or password',
+
+    // 1.1
+    'userauth.propertie.selecteduserauthprotection.label' => 'Restrict Users',
 ];

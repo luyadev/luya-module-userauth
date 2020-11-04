@@ -5,6 +5,7 @@ namespace luya\userauth\frontend\properties;
 use luya\admin\base\CheckboxArrayProperty;
 use luya\cms\frontend\events\BeforeRenderEvent;
 use luya\helpers\ArrayHelper;
+use luya\userauth\frontend\Module;
 use luya\userauth\models\User;
 use Yii;
 use yii\web\ForbiddenHttpException;
@@ -71,6 +72,6 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
      */
     public function label()
     {
-        return 'Protect Page for given users';
+        return Module::t('userauth.propertie.selecteduserauthprotection.label');
     }
 }
