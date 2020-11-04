@@ -4,6 +4,7 @@ namespace luya\userauth\frontend\properties;
 
 use luya\admin\base\CheckboxArrayProperty;
 use luya\cms\frontend\events\BeforeRenderEvent;
+use luya\cms\menu\Item;
 use luya\helpers\ArrayHelper;
 use luya\userauth\frontend\Module;
 use luya\userauth\models\User;
@@ -83,5 +84,23 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
     public function label()
     {
         return Module::t('userauth.propertie.selecteduserauthprotection.label');
+    }
+
+    /**
+     * Check if a given item is visible for the current user or not.
+     *
+     * @param Item $item
+     * @return boolean Whether the item is visible or not.
+     */
+    public static function isVisible(Item $item)
+    {
+        /** @var SelectedUserAuthProtection $prop */
+        if ($prop = $item->getProperty(SelectedUserAuthProtection::identifier())) {
+            if ($prop->isActive()) {
+                return $prop->userInList(Yii::$app->user->id);
+            }
+        }
+
+        return true;
     }
 }
