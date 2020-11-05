@@ -11,6 +11,9 @@ class UserAuthTestCase extends WebApplicationTestCase
             'id' => 'packagetest',
             'basePath' => __DIR__,
             'language' => 'en',
+            'components' => [
+                'db' => ['class' => 'yii\db\Connection', 'dsn' => 'sqlite::memory:']
+            ]
         ];
     }
 }
