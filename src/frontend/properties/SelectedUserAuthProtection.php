@@ -30,10 +30,8 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
      * 
      * + Any user is logged (this means the permission check is not directly done by this property and must be done by {{UserAuthProtection}} class)
      * + Any user from the list has been selected
-     *
-     * @param BeforeRenderEvent $event
      */
-    public function ensureUserSelection(BeforeRenderEvent $event)
+    public function ensureUserSelection()
     {
         // when users are selected and the user is logged in, check for whether the user id is in the array or not.
         if ($this->isActive() && !$this->userInList(Yii::$app->user->id)) {

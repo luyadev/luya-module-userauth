@@ -13,6 +13,15 @@ class UserAuthTestCase extends WebApplicationTestCase
             'language' => 'en',
             'components' => [
                 'db' => ['class' => 'yii\db\Connection', 'dsn' => 'sqlite::memory:']
+            ],
+            'modules' => [
+                'admin' => [
+                    'class' => 'luya\admin\Module',
+                ],
+                'userauthfrontend' => [
+                    'class' => 'luya\userauth\frontend\Module',
+                ],
+                'userauthadmin' => 'luya\userauth\admin\Module',
             ]
         ];
     }

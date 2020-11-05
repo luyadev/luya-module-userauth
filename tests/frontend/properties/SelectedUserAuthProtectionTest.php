@@ -3,13 +3,27 @@
 namespace luya\userauth\tests\frontend\properties;
 
 use luya\cms\menu\Item;
+use luya\testsuite\fixtures\NgRestModelFixture;
 use luya\testsuite\traits\CmsDatabaseTableTrait;
 use luya\userauth\frontend\properties\SelectedUserAuthProtection;
+use luya\userauth\models\User;
 use luya\userauth\tests\UserAuthTestCase;
 
 class SelectedUserAuthProtectionTest extends UserAuthTestCase
 {
     use CmsDatabaseTableTrait;
+
+    public function testMetaMethods()
+    {
+        new NgRestModelFixture([
+            'modelClass' => User::class,
+        ]);
+
+        $prop = new SelectedUserAuthProtection();
+        $this->assertEmpty($prop->items());
+        $this->assertNotEmpty($prop->label());
+        $this->assertNotEmpty($prop->help());
+    }
 
     public function testUserInList()
     {
@@ -44,5 +58,12 @@ class SelectedUserAuthProtectionTest extends UserAuthTestCase
         $this->createCmsPropertyFixture();
         $this->assertFalse(SelectedUserAuthProtection::isHidden($item));
         $this->assertTrue(SelectedUserAuthProtection::isVisible($item));
+    }
+
+    public function testensureUserSelection()
+    {
+        $prop = new SelectedUserAuthProtection();
+
+        $this->assertNull($prop->ensureUserSelection());
     }
 }
