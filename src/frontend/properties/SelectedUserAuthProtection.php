@@ -89,7 +89,7 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
     /**
      * {@inheritDoc}
      */
-    public function hint()
+    public function help()
     {
         return Module::t('userauth.propertie.selecteduserauthprotection.hint');
     }

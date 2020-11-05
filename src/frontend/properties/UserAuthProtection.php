@@ -62,7 +62,7 @@ class UserAuthProtection extends CheckboxProperty
     /**
      * {@inheritDoc}
      */
-    public function hint()
+    public function help()
     {
         return Module::t('userauth.propertie.userauthprotection.hint');
     }
