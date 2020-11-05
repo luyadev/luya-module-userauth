@@ -10,4 +10,6 @@ return [
 
     // 1.1
     'userauth.propertie.selecteduserauthprotection.label' => 'Restrict Users',
+    'userauth.propertie.selecteduserauthprotection.hint' => 'This is an additional restriction and only has an effect if page protection is enabled.',
+    'userauth.propertie.userauthprotection.hint' => 'Protects the page so only logged in users can see this page.',
 ];

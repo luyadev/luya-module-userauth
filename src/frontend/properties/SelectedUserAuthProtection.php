@@ -87,6 +87,14 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function hint()
+    {
+        return Module::t('userauth.propertie.selecteduserauthprotection.hint');
+    }
+
+    /**
      * Check if a given item is visible for the current user or not.
      *
      * @param Item $item
