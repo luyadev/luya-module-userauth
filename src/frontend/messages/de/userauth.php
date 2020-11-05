@@ -11,5 +11,5 @@ return [
     // 1.1
     'userauth.propertie.selecteduserauthprotection.label' => 'Benutzer einschränken',
     'userauth.propertie.selecteduserauthprotection.hint' => 'Nur die ausgewählten Benutzer können diese Seite öffnen. Die Benutzer-Authentifizierung muss angeschalten sein damit diese Eigenschaft einen effekt hat.',
-    'userauth.propertie.userauthprotection.hint' => 'Wenn aktiviert, wird die Seite nur für eingeloggt Besucher einsehbar.',
+    'userauth.propertie.userauthprotection.hint' => 'Wenn aktiviert, ist die Seite nur für eingeloggte Besucher einsehbar.',
 ];

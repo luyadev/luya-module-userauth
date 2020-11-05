@@ -65,7 +65,7 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
      */
     public function items()
     {
-        return User::find()->select(['username', 'id'])->indexBy('id')->column();
+        return User::find()->select(['username', 'id'])->indexBy('id')->orderBy(['username' => SORT_ASC])->column();
     }
 
     /**
