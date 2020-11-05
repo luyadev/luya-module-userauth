@@ -11,6 +11,7 @@
 		}
 	],
 	"require-dev" : {
+		"luyadev/luya-module-admin":"dev-master as 3.8.0",
 	    "luyadev/luya-testsuite" : "^1.0"
 	},
 	"autoload" : {

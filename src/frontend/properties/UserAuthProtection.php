@@ -35,7 +35,6 @@ class UserAuthProtection extends CheckboxProperty
     public function ensureUserAccess(BeforeRenderEvent $event)
     {
         if ($this->getValue() == 1 && Yii::$app->user->isGuest) {
-
             // find the nav item to redirect from config
             $navItem = Yii::$app->menu->find()->where([QueryOperatorFieldInterface::FIELD_NAVID => Config::get(Module::USERAUTH_CONFIG_REDIRECT_NAV_ID)])->with(['hidden'])->one();
             
@@ -58,5 +57,13 @@ class UserAuthProtection extends CheckboxProperty
     public function label()
     {
         return Module::t('userauth.propertie.userauthprotection.label');
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function help()
+    {
+        return Module::t('userauth.propertie.userauthprotection.hint');
     }
 }
