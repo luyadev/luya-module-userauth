@@ -1,21 +1,12 @@
 <?php
-namespace VENDOR\NAME\tests;
+namespace luya\userauth\tests\frontend;
 
-use luya\testsuite\cases\WebApplicationTestCase;
 use luya\userauth\frontend\controllers\DefaultController;
 use luya\userauth\frontend\controllers\LogoutController;
+use luya\userauth\tests\UserAuthTestCase;
 
-class FrontendTest extends WebApplicationTestCase
+class ModuleTest extends UserAuthTestCase
 {
-    public function getConfigArray()
-    {
-        return [
-            'id' => 'packagetest',
-            'basePath' => __DIR__,
-            'language' => 'en',
-        ];
-    }
-
     public function testControllers()
     {
         $default = new DefaultController('default', $this->app);
