@@ -21,7 +21,7 @@ class Module extends \luya\admin\base\Module
         return (new \luya\admin\components\AdminMenuBuilder($this))
             ->node('userauthadmin.admin.menu.node', 'verified_user')
                 ->group('userauthadmin.admin.menu.group')
-                    ->itemApi('userauthadmin.admin.menu.item.user', 'userauthadmin/user/index', 'verified_user', 'api-userauth-user');
+                    ->itemApi('userauthadmin.admin.menu.item.user', 'userauthadmin/user/index', 'people', 'api-userauth-user');
     }
     
     /**
