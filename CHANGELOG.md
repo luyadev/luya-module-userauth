@@ -5,7 +5,7 @@ In order to read more about upgrading and BC breaks have a look at the [UPGRADE 
 
 ## 1.1.0 (24. November 2020)
 
-+ [#7](https://github.com/luyadev/luya-module-userauth/pull/7) Added new page propertie in order to also protect for certain users (Protection checkbox must be activ).
++ [#7](https://github.com/luyadev/luya-module-userauth/pull/7) Added new page propertie in order to protect for certain users (Protection checkbox must be active to have an effect).
 
 ## 1.0.1 (3. December 2019)
 
