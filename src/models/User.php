@@ -157,7 +157,7 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
     
     public function getAuthKey()
     {
-        return false;
+        return null;
     }
     
     public function validateAuthKey($authKey)
