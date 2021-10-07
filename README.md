@@ -17,6 +17,7 @@ composer require luyadev/luya-module-userauth
 2. Add to the config
 ```php
 'modules' => [
+    //...
     'userauthfrontend' => [
         'class' => 'luya\userauth\frontend\Module',
         'useAppViewPath' => false, // When enabled the views will be looked up in the @app/views folder, otherwise the views shipped with the module will be used.
@@ -27,6 +28,7 @@ composer require luyadev/luya-module-userauth
 3. And the user component
 ```php
 'components' => [
+    //...
     'user' => [
         'class' => 'yii\web\User',
         'identityClass' => 'luya\userauth\models\User',
