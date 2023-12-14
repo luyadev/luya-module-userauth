@@ -1,4 +1,5 @@
 <?php
+
 namespace luya\userauth\tests;
 
 use luya\testsuite\cases\WebApplicationTestCase;

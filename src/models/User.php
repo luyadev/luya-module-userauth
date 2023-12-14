@@ -2,12 +2,12 @@
 
 namespace luya\userauth\models;
 
-use Yii;
-use luya\admin\ngrest\base\NgRestModel;
-use yii\web\IdentityInterface;
 use luya\admin\aws\ChangePasswordActiveWindow;
 use luya\admin\aws\ChangePasswordInterface;
+use luya\admin\ngrest\base\NgRestModel;
 use luya\userauth\frontend\Module;
+use Yii;
+use yii\web\IdentityInterface;
 
 /**
  * User.
@@ -36,14 +36,14 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
     {
         return 'api-userauth-user';
     }
-    
+
     /**
      * @inheritdoc
      */
     public function init()
     {
         parent::init();
-        
+
         $this->on(self::EVENT_BEFORE_VALIDATE, function () {
             if ($this->isNewRecord) {
                 $this->password_salt = Yii::$app->security->generateRandomString();
@@ -101,7 +101,7 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
             ['delete', true],
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -111,7 +111,7 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
             ['class' => ChangePasswordActiveWindow::class],
         ];
     }
-    
+
     /**
      * Validate the input user password.
      *
@@ -122,9 +122,9 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
     {
         return Yii::$app->security->validatePassword($password . $this->password_salt, $this->password);
     }
-    
+
     // ChangePasswordInterface
-    
+
     /**
      * @inheritdoc
      */
@@ -132,34 +132,34 @@ class User extends NgRestModel implements IdentityInterface, ChangePasswordInter
     {
         $salt = Yii::$app->security->generateRandomString();
         $password = Yii::$app->security->generatePasswordHash($newPassword . $salt);
-        
+
         $this->updateAttributes(['password_salt' => $salt, 'password' => $password]);
-        
+
         return true;
     }
-    
+
     // UserIdentity
-    
+
     public static function findIdentity($id)
     {
         return static::findOne($id);
     }
-    
+
     public static function findIdentityByAccessToken($token, $type = null)
     {
         return false;
     }
-    
+
     public function getId()
     {
         return $this->id;
     }
-    
+
     public function getAuthKey()
     {
         return null;
     }
-    
+
     public function validateAuthKey($authKey)
     {
         return false;

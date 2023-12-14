@@ -12,9 +12,9 @@ namespace luya\userauth\frontend;
  */
 class Module extends \luya\base\Module
 {
-    const USERAUTH_CONFIG_REDIRECT_NAV_ID = 'userauth_redirect_nav_id';
+    public const USERAUTH_CONFIG_REDIRECT_NAV_ID = 'userauth_redirect_nav_id';
 
-    const USERAUTH_CONFIG_AFTER_LOGIN_NAV_ID = 'userauth_afterlogin_nav_id';
+    public const USERAUTH_CONFIG_AFTER_LOGIN_NAV_ID = 'userauth_afterlogin_nav_id';
 
     /**
      * @inheritdoc
@@ -25,7 +25,7 @@ class Module extends \luya\base\Module
             'userauth' => 'userauth.php',
         ]);
     }
-    
+
     /**
      * @inheritdoc
      */

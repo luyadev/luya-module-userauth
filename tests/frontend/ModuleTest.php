@@ -1,4 +1,5 @@
 <?php
+
 namespace luya\userauth\tests\frontend;
 
 use luya\userauth\frontend\controllers\DefaultController;

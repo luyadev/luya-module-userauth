@@ -1,7 +1,7 @@
 <?php
-use yii\widgets\ActiveForm;
 use luya\helpers\Html;
 use luya\userauth\frontend\Module;
+use yii\widgets\ActiveForm;
 
 /** @var luya\userauth\models\UserLoginForm $model */
 ?>

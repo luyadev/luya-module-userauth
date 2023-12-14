@@ -2,8 +2,8 @@
 
 namespace luya\userauth\models;
 
-use yii\base\Model;
 use luya\userauth\frontend\Module;
+use yii\base\Model;
 
 /**
  * User Login Form.
@@ -19,12 +19,12 @@ class UserLoginForm extends Model
      * @var string The username
      */
     public $username;
-    
+
     /**
      * @var string The password for a given username.
      */
     public $password;
-    
+
     /**
      * @inheritdoc
      */
@@ -45,7 +45,7 @@ class UserLoginForm extends Model
             'password' => Module::t('userauth.models.user.password'),
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -58,8 +58,6 @@ class UserLoginForm extends Model
 
     /**
      * Validate the current input data against an user.
-     *
-     * @return boolean
      */
     public function validateUser()
     {
@@ -67,9 +65,9 @@ class UserLoginForm extends Model
             return $this->addError('password', Module::t('userauth.models.userloginform.error.username_password'));
         }
     }
-    
+
     private $_user;
-    
+
     /**
      * Get user object, contains false if not found.
      *
@@ -80,7 +78,7 @@ class UserLoginForm extends Model
         if ($this->_user === null) {
             $this->_user = User::findOne(['username' => $this->username]);
         }
-        
+
         return $this->_user;
     }
 }

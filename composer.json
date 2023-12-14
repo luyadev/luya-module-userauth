@@ -1,37 +1,52 @@
 {
-	"name" : "luyadev/luya-module-userauth",
-	"description" : "Authsystem with username and password for a given cms page area.",
-	"type" : "luya-module",
-	"keywords" : ["luya", "auth"],
+	"name": "luyadev/luya-module-userauth",
+	"description": "Authsystem with username and password for a given cms page area.",
+	"type": "luya-module",
+	"keywords": [
+		"luya",
+		"auth"
+	],
 	"license": "MIT",
-	"authors" : [
+	"authors": [
 		{
 			"name": "Basil Suter",
 			"email": "basil@nadar.io"
 		}
 	],
-	"require-dev" : {
-	    "luyadev/luya-testsuite" : "^2.0"
+	"require-dev": {
+		"luyadev/luya-module-admin": "^3.0|^4.0|^5.0",
+		"luyadev/luya-module-cms": "^3.0|^4.0|^5.0",
+		"luyadev/luya-testsuite": "^3.0",
+		"friendsofphp/php-cs-fixer": "^3.2",
+        "phpstan/phpstan": "^1.7"
 	},
-	"autoload" : {
-		"psr-4" : {
-			"luya\\userauth\\" : "src/"
+	"autoload": {
+		"psr-4": {
+			"luya\\userauth\\": "src/"
 		}
 	},
-	"autoload-dev" : {
-       "psr-4" : {
-           "luya\\userauth\\tests\\" : "tests/"
-       }
-    },
+	"autoload-dev": {
+		"psr-4": {
+			"luya\\userauth\\tests\\": "tests/"
+		}
+	},
 	"config": {
-        "fxp-asset": {
-            "enabled": false
-        }
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-	]
+		"fxp-asset": {
+			"enabled": false
+		},
+		"allow-plugins": {
+			"luyadev/luya-composer": true,
+			"yiisoft/yii2-composer": true
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	],
+	"scripts": {
+		"phpstan": "vendor/bin/phpstan -v",
+        "phpcsfixer": "vendor/bin/php-cs-fixer fix"
+	}
 }

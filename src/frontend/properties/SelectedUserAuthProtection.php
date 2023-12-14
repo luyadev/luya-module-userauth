@@ -3,7 +3,6 @@
 namespace luya\userauth\frontend\properties;
 
 use luya\admin\base\CheckboxArrayProperty;
-use luya\cms\frontend\events\BeforeRenderEvent;
 use luya\cms\menu\Item;
 use luya\helpers\ArrayHelper;
 use luya\userauth\frontend\Module;
@@ -19,15 +18,15 @@ class SelectedUserAuthProtection extends CheckboxArrayProperty
     public function init()
     {
         parent::init();
-        
+
         $this->on(self::EVENT_BEFORE_RENDER, [$this, 'ensureUserSelection']);
     }
 
     /**
      * Check whether the current page requires protection and user is logged in.
-     * 
+     *
      * The protection check for the given users does not have an effect if:
-     * 
+     *
      * + Any user is logged (this means the permission check is not directly done by this property and must be done by {{UserAuthProtection}} class)
      * + Any user from the list has been selected
      */

@@ -15,7 +15,7 @@ class Module extends \luya\admin\base\Module
     public $apis = [
         'api-userauth-user' => 'luya\userauth\admin\apis\UserController',
     ];
-    
+
     public function getMenu()
     {
         return (new \luya\admin\components\AdminMenuBuilder($this))
@@ -23,7 +23,7 @@ class Module extends \luya\admin\base\Module
                 ->group('userauthadmin.admin.menu.group')
                     ->itemApi('userauthadmin.admin.menu.item.user', 'userauthadmin/user/index', 'people', 'api-userauth-user');
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -33,7 +33,7 @@ class Module extends \luya\admin\base\Module
             'userauthadmin' => 'userauthadmin.php',
         ]);
     }
-    
+
     /**
      * @inheritdoc
      */

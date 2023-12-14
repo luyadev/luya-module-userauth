@@ -2,8 +2,8 @@
 
 namespace luya\userauth\frontend\controllers;
 
-use Yii;
 use luya\web\Controller;
+use Yii;
 use yii\filters\HttpCache;
 
 /**
@@ -38,7 +38,7 @@ class LogoutController extends Controller
     public function actionIndex()
     {
         Yii::$app->user->logout();
-        
+
         return $this->goHome();
     }
 }
